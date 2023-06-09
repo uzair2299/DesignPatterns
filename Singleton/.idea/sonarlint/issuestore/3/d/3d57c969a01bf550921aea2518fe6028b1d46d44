@@ -1,0 +1,5 @@
+
+R
+java:S2589"7Remove this expression which always evaluates to "true"( …ë¯üÿÿÿÿ
+•
+java:S2159"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.( …ë¯üÿÿÿÿ
