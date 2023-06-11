@@ -17,3 +17,15 @@ Here are the key points
 * Configure static builder method: In the product class, provide a static builder method that creates and returns a new instance of the builder.
 * Add build method: Include a build method in the builder class that creates an instance of the product class using the configured attributes and returns it.
 * Finally, call the build method on the builder to obtain the fully constructed object.
+
+In the Builder pattern, there are two common approaches to defining fields: within the builder class itself or within the class being built. Both approaches have their advantages and considerations, so the choice depends on the specific requirements and design preferences of the application. Let's discuss each approach:
+### Fields in the Builder Class:
+* In this approach, the builder class has fields that mirror the attributes of the class being built. The builder class is responsible for holding the values of these attributes during the construction process.
+* This approach allows for a clear separation of concerns, as the builder class solely focuses on the construction logic while the built class represents the final object with its attributes and behavior.
+* It can make the builder class more self-contained and easier to manage, as it encapsulates the construction process.
+* This approach is particularly useful when dealing with complex object construction, where the builder class helps organize and handle the various steps involved.
+### Fields in the Class Being Built:
+* In this approach, the class being built directly defines its own attributes as fields. The builder class is responsible for setting these attributes during construction.
+* This approach provides a more straightforward representation of the final object, as its attributes are directly defined within the class itself.
+* It may lead to less code duplication, as the builder class doesn't need to define fields that are already present in the class being built.
+* This approach is useful when the class being built has a simple structure or when there is a preference for directly defining the attributes within the class.
