@@ -10,3 +10,9 @@ To implement the factory pattern, also known as the factory method pattern, you 
 
 ## Builder Method Pattren
 The Builder pattern is a creational design pattern that provides a way to construct complex objects step by step. It separates the construction of an object from its representation, allowing the same construction process to create different representations. The pattern is useful when you need to create objects that have multiple optional parameters or configurations.
+Here are the key points
+* Define the product: First, you need to define the class for the object you want to build. This class should have multiple attributes or properties that can be configured.
+* Create a builder: The product class should have a nested builder class. The builder class has the same attributes as the product class and provides setter methods to configure these attributes.
+* Configure the builder: Use the builder's setter methods to configure the desired attributes of the object being built.
+* Define a static builder method that returns a new instance of the builder in product class
+* Build the object: Call the build() method on the builder to obtain the fully constructed object. The builder returns the configured instance of the product class.
