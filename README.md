@@ -14,5 +14,6 @@ Here are the key points
 * Define the product: First, you need to define the class for the object you want to build. This class should have multiple attributes or properties that can be configured.
 * Create a builder: The product class should have a nested builder class. The builder class has the same attributes as the product class and provides setter methods to configure these attributes.
 * Configure the builder: Use the builder's setter methods to configure the desired attributes of the object being built.
-* Define a static builder method that returns a new instance of the builder in product class
-* Build the object: Call the build() method on the builder to obtain the fully constructed object. The builder returns the configured instance of the product class.
+* Configure static builder method: In the product class, provide a static builder method that creates and returns a new instance of the builder.
+* Add build method: Include a build method in the builder class that creates an instance of the product class using the configured attributes and returns it.
+* Finally, call the build method on the builder to obtain the fully constructed object.
