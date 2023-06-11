@@ -1,4 +1,4 @@
-package org.example;
+package FieldsInTheClassBeingBuilt;
 
 import java.util.List;
 
