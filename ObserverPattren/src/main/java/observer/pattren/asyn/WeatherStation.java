@@ -1,0 +1,41 @@
+package observer.pattren.asyn;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class WeatherStation implements Subject {
+    private List<Observer> observers = new ArrayList<>();
+    private ExecutorService executor = Executors.newFixedThreadPool(10);
+    private int temperature;
+    public void attach(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void detach(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObserversAsync() {
+        executor.submit(() -> notifyObservers());
+    }
+
+    public void notifyObservers() {
+        try {
+            Thread.sleep(5000);
+            for (Observer observer : observers) {
+                observer.update(temperature);
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+        notifyObserversAsync();
+    }
+
+}
